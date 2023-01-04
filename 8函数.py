@@ -140,19 +140,46 @@ print(musician)
 
 musician = get_formatted_name('john', 'hooker', 'lee')
 print(musician)
+#上述代码，利用中间值默认值为一个空格，实现了中间名的可选填正常输出
+
+#返回字典
+#函数可以返回任何类型的值，包括列表和字典等较为复杂的数据结构
+#下面的函数接受姓名的组成部分，并返回一个表示人的字典
+def build_person(first_name, last_name):
+    """返回一个字典，其中包含有关一个人的信息"""
+    person = {'first': first_name, 'last': last_name}
+    return person
+
+musician = build_person('jimi', 'hendrix')
+print(musician)
+#运行的结果，字典被作为结果输出了
+
+
+#结合函数和while循环
+def get_formatted_name(first_name,last_name):
+    """返回整洁的姓名"""
+    full_name = first_name + ' ' + last_name
+    return full_name.title()
+#请用户提供一系列输入时，我们可以用break语句实现轻松的退出
+
+while True:
+    print("\nPlease tell me your name:")
+    print("(enter 'q' at any time to quit)")
+
+    f_name = input("First name: ")
+    if f_name == 'q':
+        break
+
+    l_name = input("Last name: ")
+    if l_name == 'q':
+        break
+
+    formatted_name = get_formatted_name(f_name, l_name)
+    print("\nHello, " + formatted_name + "!")
 
 
 
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
